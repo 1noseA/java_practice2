@@ -1,16 +1,14 @@
-import java.util.*;
-
 public class Main {
   public static void main(String[] args) {
-    System.out.println("ご利用のJavaバージョン：");
-    System.out.println(System.getProperty("Java.version"));
-    Properties p = System.getProperties();
-    Iterator<String> i = p.stringPropertyNames().iterator();
-    System.out.println("【システムプロパティー覧】");
-    while(i.hasNext()) {
-      String key = i.next();
-      System.out.print(key + "=");
-      System.out.println(System.getProperty(key));
-    }
+    Class<?> info1 = String.class;
+    System.out.println(info1.getSimpleName());
+    System.out.println(info1.getName());
+    System.out.println(info1.getPackage().getName());
+
+    System.out.println(info1.isArray());
+    Class<?> info2 =info1.getSuperclass();
+    System.out.println(info2.getName());
+    Class<?> info3 = args.getClass();
+    System.out.println(info3.isArray());
   }
 }
